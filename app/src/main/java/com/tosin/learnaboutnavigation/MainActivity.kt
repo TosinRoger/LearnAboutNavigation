@@ -8,6 +8,7 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import com.tosin.learnaboutnavigation.feed.FeedFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
@@ -65,8 +66,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_gallery -> {
 
             }
-            R.id.nav_slideshow -> {
-
+            R.id.nav_feed_dummy -> {
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.container_content_main, FeedFragment.newInstance(1))
+                    .commit()
             }
             R.id.nav_manage -> {
 
