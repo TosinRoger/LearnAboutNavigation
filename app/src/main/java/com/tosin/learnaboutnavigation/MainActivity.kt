@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import com.tosin.learnaboutnavigation.feed.FeedFragment
+import com.tosin.learnaboutnavigation.text.BlankFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
@@ -61,10 +62,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_camera -> {
-                // Handle the camera action
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.container_content_main, BlankFragment.newInstance("Test", "Camenra"))
+                    .commit()
             }
             R.id.nav_gallery -> {
-
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.container_content_main, BlankFragment.newInstance("Test", "Galery"))
+                    .commit()
             }
             R.id.nav_feed_dummy -> {
                 supportFragmentManager
@@ -73,13 +80,22 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     .commit()
             }
             R.id.nav_manage -> {
-
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.container_content_main, BlankFragment.newInstance("Test", "Manager"))
+                    .commit()
             }
             R.id.nav_share -> {
-
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.container_content_main, BlankFragment.newInstance("Test", "share"))
+                    .commit()
             }
             R.id.nav_send -> {
-
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.container_content_main, BlankFragment.newInstance("Test", "send"))
+                    .commit()
             }
         }
 
